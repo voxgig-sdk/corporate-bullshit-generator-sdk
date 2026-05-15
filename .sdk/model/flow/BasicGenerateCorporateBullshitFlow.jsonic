@@ -1,0 +1,28 @@
+# BasicGenerateCorporateBullshitFlow
+
+main: kit: flow: BasicGenerateCorporateBullshitFlow:
+{
+  entity: "generate_corporate_bullshit",
+  kind: "basic",
+  name: "BasicGenerateCorporateBullshitFlow",
+  step: [
+    {
+      input: {
+        ref: "generate_corporate_bullshit_ref01",
+        srcdatavar: "generate_corporate_bullshit_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-generate_corporate_bullshit_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGenerateCorporateBullshitFlow"
+}

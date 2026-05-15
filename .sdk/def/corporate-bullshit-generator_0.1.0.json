@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Corporate Bullshit Generator",
+    "description": "This API generates random corporate bullshit phrases that can be used in applications to mimic business jargon. It adds a humorous touch to the often vague and buzzword-filled corporate world. CORS enabled.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/sameerkumar18/corporate-bs-generator-api"
+    },
+    "license": {
+      "name": "BSD-3-Clause",
+      "url": "https://opensource.org/licenses/BSD-3-Clause"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://corporatebs-generator.sameerkumar.website",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Generate random corporate bullshit phrase",
+        "description": "Returns a randomly generated corporate bullshit/buzzword phrase. CORS is enabled for this endpoint.",
+        "operationId": "generateCorporateBullshit",
+        "tags": [
+          "Generator"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully generated a corporate bullshit phrase",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "phrase": {
+                      "type": "string",
+                      "description": "The generated corporate bullshit phrase",
+                      "example": "Quickly cloudify equity invested collaboration and idea-sharing"
+                    }
+                  }
+                },
+                "examples": {
+                  "example1": {
+                    "summary": "Example corporate phrase 1",
+                    "value": {
+                      "phrase": "Quickly cloudify equity invested collaboration and idea-sharing"
+                    }
+                  },
+                  "example2": {
+                    "summary": "Example corporate phrase 2",
+                    "value": {
+                      "phrase": "Efficiently build empowered networks"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "CORS header allowing cross-origin requests"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Generator",
+      "description": "Corporate bullshit phrase generation endpoints"
+    }
+  ],
+  "externalDocs": {
+    "description": "GitHub Repository",
+    "url": "https://github.com/sameerkumar18/corporate-bs-generator-api"
+  }
+}

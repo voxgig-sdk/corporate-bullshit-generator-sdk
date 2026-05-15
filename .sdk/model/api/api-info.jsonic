@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/sameerkumar18/corporate-bs-generator-api"
+      }
+      description: "This API generates random corporate bullshit phrases that can be used in applications to mimic business jargon. It adds a humorous touch to the often vague and buzzword-filled corporate world. CORS enabled."
+      license: {
+        name: "BSD-3-Clause"
+        url: "https://opensource.org/licenses/BSD-3-Clause"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://corporatebs-generator.sameerkumar.website"
+        }
+      ]
+      title: "Corporate Bullshit Generator"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

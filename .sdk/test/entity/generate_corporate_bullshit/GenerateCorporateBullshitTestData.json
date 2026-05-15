@@ -1,0 +1,22 @@
+{
+  "existing": {
+    "generate_corporate_bullshit": {
+      "GENERATE_CORPORATE_BULLSHIT00": {
+        "phrase": "sa"
+      },
+      "GENERATE_CORPORATE_BULLSHIT01": {
+        "phrase": "s14"
+      },
+      "GENERATE_CORPORATE_BULLSHIT02": {
+        "phrase": "s1e"
+      }
+    }
+  },
+  "new": {
+    "generate_corporate_bullshit": {
+      "generate_corporate_bullshit_ref01": {
+        "phrase": "s28"
+      }
+    }
+  }
+}

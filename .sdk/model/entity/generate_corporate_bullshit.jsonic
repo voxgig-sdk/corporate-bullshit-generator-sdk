@@ -1,0 +1,34 @@
+# Entity: generate_corporate_bullshit
+
+main: kit: entity: generate_corporate_bullshit: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "phrase"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "generate_corporate_bullshit"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/"
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
