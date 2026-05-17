@@ -2,13 +2,16 @@
   "existing": {
     "generate_corporate_bullshit": {
       "GENERATE_CORPORATE_BULLSHIT00": {
-        "phrase": "sa"
+        "phrase": "sa",
+        "id": "GENERATE_CORPORATE_BULLSHIT00"
       },
       "GENERATE_CORPORATE_BULLSHIT01": {
-        "phrase": "s14"
+        "phrase": "s14",
+        "id": "GENERATE_CORPORATE_BULLSHIT01"
       },
       "GENERATE_CORPORATE_BULLSHIT02": {
-        "phrase": "s1e"
+        "phrase": "s1e",
+        "id": "GENERATE_CORPORATE_BULLSHIT02"
       }
     }
   },

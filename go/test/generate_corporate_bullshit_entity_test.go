@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk"
-	"github.com/voxgig-sdk/corporate-bullshit-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go"
+	"github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go/utility/struct"
 )
 
 func TestGenerateCorporateBullshitEntity(t *testing.T) {

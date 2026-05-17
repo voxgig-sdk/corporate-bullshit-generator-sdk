@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk"
-	"github.com/voxgig-sdk/corporate-bullshit-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go"
+	"github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go/core"
 )
 
 func TestGenerateCorporateBullshitDirect(t *testing.T) {
