@@ -91,7 +91,6 @@ function generate_corporate_bullshit_basic_setup(extra)
     ["CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"] = idmap,
     ["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] = "FALSE",
     ["CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN"] = "FALSE",
-    ["CORPORATEBULLSHITGENERATOR_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ function generate_corporate_bullshit_basic_setup(extra)
   if env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["CORPORATEBULLSHITGENERATOR_APIKEY"],
       },
       extra or {},
     })

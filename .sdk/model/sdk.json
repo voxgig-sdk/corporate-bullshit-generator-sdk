@@ -20,7 +20,14 @@
           }
         ],
         "title": "Corporate Bullshit Generator",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Generate random corporate buzzword phrases for slide decks, demos, and mock-ups",
+        "homepage": "https://corporatebs-generator.sameerkumar.website",
+        "docs_url": "https://freepublicapis.com/corporate-bullshit-generator",
+        "license_short": "BSD-3-Clause",
+        "license_md": "- Distributed under the BSD-3-Clause license.\n- Free to use in personal and commercial projects with attribution.\n- The API itself is a hobby service with no stated SLA; rely on it accordingly.",
+        "about_md": "The Corporate Bullshit Generator API is a small hobby service that returns one random corporate-jargon phrase per call, mimicking the buzzword-laden language of business slide decks. It is maintained by Sameer Kumar and hosted at [corporatebs-generator.sameerkumar.website](https://corporatebs-generator.sameerkumar.website).\n\nWhat you get from the API:\n\n- A single GET endpoint at the root URL that returns a JSON object containing one randomly generated corporate phrase (for example, \"Quickly Leverage Existing Business Scenarios\").\n- No parameters, no authentication, and no body required.\n\nOperational notes: the community catalogue lists no documented rate limits or authentication, and reports CORS as disabled, so browser-side calls may need a proxy. Treat it as a fun utility for demos, placeholder content, and humour rather than a critical dependency.",
+        "auth": false
       },
       "config": {
         "auth": {
@@ -28,7 +35,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "generate_corporate_bullshit": {

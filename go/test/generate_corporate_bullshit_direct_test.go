@@ -99,14 +99,12 @@ func generate_corporate_bullshitDirectSetup(mockres any) *generate_corporate_bul
 	env := envOverride(map[string]any{
 		"CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": map[string]any{},
 		"CORPORATEBULLSHITGENERATOR_TEST_LIVE":    "FALSE",
-		"CORPORATEBULLSHITGENERATOR_APIKEY":       "NONE",
 	})
 
 	live := env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["CORPORATEBULLSHITGENERATOR_APIKEY"],
 		}
 		client := sdk.NewCorporateBullshitGeneratorSDK(mergedOpts)
 
