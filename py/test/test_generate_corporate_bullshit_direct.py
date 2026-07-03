@@ -59,12 +59,14 @@ def _generate_corporate_bullshit_direct_setup(mockres):
     env = runner.env_override({
         "CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": {},
         "CORPORATEBULLSHITGENERATOR_TEST_LIVE": "FALSE",
+        "CORPORATEBULLSHITGENERATOR_APIKEY": "NONE",
     })
 
     live = env.get("CORPORATEBULLSHITGENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("CORPORATEBULLSHITGENERATOR_APIKEY"),
         }
         client = CorporateBullshitGeneratorSDK(merged_opts)
         return {

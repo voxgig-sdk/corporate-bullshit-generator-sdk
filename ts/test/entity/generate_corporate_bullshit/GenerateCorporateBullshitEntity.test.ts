@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID': idmap,
     'CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE': 'FALSE',
     'CORPORATE_BULLSHIT_GENERATOR_TEST_EXPLAIN': 'FALSE',
+    'CORPORATE_BULLSHIT_GENERATOR_APIKEY': 'NONE',
   })
 
   idmap = env['CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new CorporateBullshitGeneratorSDK(merge([
       {
+        apikey: env.CORPORATE_BULLSHIT_GENERATOR_APIKEY,
       },
       extra
     ]))

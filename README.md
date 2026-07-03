@@ -1,19 +1,8 @@
 # CorporateBullshitGenerator SDK
 
-Generate random corporate buzzword phrases for slide decks, demos, and mock-ups
+Corporate Bullshit Generator client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Corporate Bullshit Generator
-
-The Corporate Bullshit Generator API is a small hobby service that returns one random corporate-jargon phrase per call, mimicking the buzzword-laden language of business slide decks. It is maintained by Sameer Kumar and hosted at [corporatebs-generator.sameerkumar.website](https://corporatebs-generator.sameerkumar.website).
-
-What you get from the API:
-
-- A single GET endpoint at the root URL that returns a JSON object containing one randomly generated corporate phrase (for example, "Quickly Leverage Existing Business Scenarios").
-- No parameters, no authentication, and no body required.
-
-Operational notes: the community catalogue lists no documented rate limits or authentication, and reports CORS as disabled, so browser-side calls may need a proxy. Treat it as a fun utility for demos, placeholder content, and humour rather than a critical dependency.
 
 ## Try it
 
@@ -47,27 +36,31 @@ gem install corporate-bullshit-generator-sdk
 luarocks install corporate-bullshit-generator-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { CorporateBullshitGeneratorSDK } from 'corporate-bullshit-generator'
 
-const client = new CorporateBullshitGeneratorSDK({})
+const client = new CorporateBullshitGeneratorSDK({
+  apikey: process.env.CORPORATE-BULLSHIT-GENERATOR_APIKEY,
+})
 
+// Load generatecorporatebullshit data
+const generatecorporatebullshit = await client.GenerateCorporateBullshit().load({})
+console.log(generatecorporatebullshit.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -107,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK
 
-client = CorporateBullshitGeneratorSDK({})
+client = CorporateBullshitGeneratorSDK({
+    "apikey": os.environ.get("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
+})
 
 
 # Load a specific generatecorporatebullshit
-generatecorporatebullshit, err = client.GenerateCorporateBullshit(None).load(
-    {"id": "example_id"}, None
-)
+generatecorporatebullshit, err = client.GenerateCorporateBullshit().load({"id": "example_id"})
+print(generatecorporatebullshit)
 ```
 
 ### PHP
@@ -124,13 +119,14 @@ generatecorporatebullshit, err = client.GenerateCorporateBullshit(None).load(
 <?php
 require_once 'corporatebullshitgenerator_sdk.php';
 
-$client = new CorporateBullshitGeneratorSDK([]);
+$client = new CorporateBullshitGeneratorSDK([
+    "apikey" => getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
+]);
 
 
 // Load a specific generatecorporatebullshit
-[$generatecorporatebullshit, $err] = $client->GenerateCorporateBullshit(null)->load(
-    ["id" => "example_id"], null
-);
+[$generatecorporatebullshit, $err] = $client->GenerateCorporateBullshit()->load(["id" => "example_id"]);
+print_r($generatecorporatebullshit);
 ```
 
 ### Golang
@@ -138,8 +134,13 @@ $client = new CorporateBullshitGeneratorSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go"
 
-client := sdk.NewCorporateBullshitGeneratorSDK(map[string]any{})
+client := sdk.NewCorporateBullshitGeneratorSDK(map[string]any{
+    "apikey": os.Getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
+})
 
+// Load generatecorporatebullshit data
+generatecorporatebullshit, err := client.GenerateCorporateBullshit(nil).Load(map[string]any{}, nil)
+fmt.Println(generatecorporatebullshit)
 ```
 
 ### Ruby
@@ -147,13 +148,14 @@ client := sdk.NewCorporateBullshitGeneratorSDK(map[string]any{})
 ```ruby
 require_relative "CorporateBullshitGenerator_sdk"
 
-client = CorporateBullshitGeneratorSDK.new({})
+client = CorporateBullshitGeneratorSDK.new({
+  "apikey" => ENV["CORPORATE-BULLSHIT-GENERATOR_APIKEY"],
+})
 
 
 # Load a specific generatecorporatebullshit
-generatecorporatebullshit, err = client.GenerateCorporateBullshit(nil).load(
-  { "id" => "example_id" }, nil
-)
+generatecorporatebullshit, err = client.GenerateCorporateBullshit().load({ "id" => "example_id" })
+puts generatecorporatebullshit
 ```
 
 ### Lua
@@ -161,13 +163,14 @@ generatecorporatebullshit, err = client.GenerateCorporateBullshit(nil).load(
 ```lua
 local sdk = require("corporate-bullshit-generator_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
+})
 
 
 -- Load a specific generatecorporatebullshit
-local generatecorporatebullshit, err = client:GenerateCorporateBullshit(nil):load(
-  { id = "example_id" }, nil
-)
+local generatecorporatebullshit, err = client:GenerateCorporateBullshit():load({ id = "example_id" })
+print(generatecorporatebullshit)
 ```
 
 ## Unit testing in offline mode
@@ -186,25 +189,21 @@ const result = await client.GenerateCorporateBullshit().load({ id: 'test01' })
 ### Python
 
 ```python
-client = CorporateBullshitGeneratorSDK.test(None, None)
-result, err = client.GenerateCorporateBullshit(None).load(
-    {"id": "test01"}, None
-)
+client = CorporateBullshitGeneratorSDK.test()
+result, err = client.GenerateCorporateBullshit().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = CorporateBullshitGeneratorSDK::test(null, null);
-[$result, $err] = $client->GenerateCorporateBullshit(null)->load(
-    ["id" => "test01"], null
-);
+$client = CorporateBullshitGeneratorSDK::test();
+[$result, $err] = $client->GenerateCorporateBullshit()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GenerateCorporateBullshit(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -213,19 +212,15 @@ result, err := client.GenerateCorporateBullshit(nil).Load(
 ### Ruby
 
 ```ruby
-client = CorporateBullshitGeneratorSDK.test(nil, nil)
-result, err = client.GenerateCorporateBullshit(nil).load(
-  { "id" => "test01" }, nil
-)
+client = CorporateBullshitGeneratorSDK.test
+result, err = client.GenerateCorporateBullshit().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GenerateCorporateBullshit(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GenerateCorporateBullshit():load({ id = "test01" })
 ```
 
 ## How it works
@@ -329,15 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Corporate Bullshit Generator
-
-- Upstream: [https://corporatebs-generator.sameerkumar.website](https://corporatebs-generator.sameerkumar.website)
-- API docs: [https://freepublicapis.com/corporate-bullshit-generator](https://freepublicapis.com/corporate-bullshit-generator)
-
-- Distributed under the BSD-3-Clause license.
-- Free to use in personal and commercial projects with attribution.
-- The API itself is a hobby service with no stated SLA; rely on it accordingly.
 
 ---
 
