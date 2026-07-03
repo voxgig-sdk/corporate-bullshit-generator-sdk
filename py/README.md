@@ -10,7 +10,7 @@ The Python SDK for the CorporateBullshitGenerator API — an entity-oriented cli
 
 ## Install
 ```bash
-pip install corporate-bullshit-generator-sdk
+pip install voxgig-sdk-corporate-bullshit-generator
 ```
 
 Or install from source:

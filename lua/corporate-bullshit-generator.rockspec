@@ -8,12 +8,14 @@ source = {
   dir = "corporate-bullshit-generator-sdk/lua"
 }
 description = {
-  summary = "CorporateBullshitGenerator SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Corporate Bullshit Generator public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk",
+  issues_url = "https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "corporate-bullshit-generator" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

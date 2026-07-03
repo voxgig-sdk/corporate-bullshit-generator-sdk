@@ -10,7 +10,7 @@ The TypeScript SDK for the CorporateBullshitGenerator API — a type-safe, entit
 
 ## Install
 ```bash
-npm install corporate-bullshit-generator
+npm install @voxgig-sdk/corporate-bullshit-generator
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The PHP SDK for the CorporateBullshitGenerator API — an entity-oriented client
 
 ## Install
 ```bash
-composer require voxgig/corporate-bullshit-generator-sdk
+composer require voxgig-sdk/corporate-bullshit-generator
 ```
 
 

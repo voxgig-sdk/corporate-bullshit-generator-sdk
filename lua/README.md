@@ -10,7 +10,7 @@ The Lua SDK for the CorporateBullshitGenerator API — an entity-oriented client
 
 ## Install
 ```bash
-luarocks install corporate-bullshit-generator-sdk
+luarocks install voxgig-sdk-corporate-bullshit-generator
 ```
 
 If the module is not yet published, add the source directory to

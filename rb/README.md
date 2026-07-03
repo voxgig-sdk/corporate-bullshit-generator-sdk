@@ -10,13 +10,13 @@ The Ruby SDK for the CorporateBullshitGenerator API — an entity-oriented clien
 
 ## Install
 ```bash
-gem install corporate-bullshit-generator-sdk
+gem install voxgig-sdk-corporate-bullshit-generator
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "corporate-bullshit-generator-sdk"
+gem "voxgig-sdk-corporate-bullshit-generator"
 ```
 
 Then run:
