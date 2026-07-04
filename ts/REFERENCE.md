@@ -109,7 +109,7 @@ Alias for `CorporateBullshitGeneratorSDK.test()`.
 ## GenerateCorporateBullshitEntity
 
 ```ts
-const generate_corporate_bullshit = client.generate_corporate_bullshit
+const generate_corporate_bullshit = client.GenerateCorporateBullshit()
 ```
 
 ### Fields
@@ -125,7 +125,7 @@ const generate_corporate_bullshit = client.generate_corporate_bullshit
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
+const result = await client.GenerateCorporateBullshit().load({ id: 'generate_corporate_bullshit_id' })
 ```
 
 ### Common Methods

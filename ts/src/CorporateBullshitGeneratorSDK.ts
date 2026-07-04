@@ -204,14 +204,7 @@ class CorporateBullshitGeneratorSDK {
 
 
 
-  _generate_corporate_bullshit?: GenerateCorporateBullshitEntity
-
-  // Idiomatic facade: `client.generate_corporate_bullshit.list()` / `client.generate_corporate_bullshit.load({ id })`.
-  get generate_corporate_bullshit(): GenerateCorporateBullshitEntity {
-    return (this._generate_corporate_bullshit ??= new GenerateCorporateBullshitEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.generate_corporate_bullshit` instead. */
+  // Entity access: `client.GenerateCorporateBullshit().list()` / `client.GenerateCorporateBullshit().load({ id })`.
   GenerateCorporateBullshit(data?: any) {
     const self = this
     return new GenerateCorporateBullshitEntity(self,data)

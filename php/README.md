@@ -33,9 +33,10 @@ $client = new CorporateBullshitGeneratorSDK();
 
 ```php
 try {
-    $result = $client->generatecorporatebullshit()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GenerateCorporateBullshit record (throws on error).
+    $generatecorporatebullshit = $client->GenerateCorporateBullshit()->load(["id" => "example_id"]);
+    print_r($generatecorporatebullshit);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = CorporateBullshitGeneratorSDK::test();
+$client = CorporateBullshitGeneratorSDK::test([
+    "entity" => ["generatecorporatebullshit" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->generatecorporatebullshit()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$generatecorporatebullshit = $client->GenerateCorporateBullshit()->load(["id" => "test01"]);
+print_r($generatecorporatebullshit);
 ```
 
 ### Use a custom fetch function
@@ -223,7 +228,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `const generate_corporate_bullshit = client.generate_corporate_bullshit`
+Create an instance: `$generate_corporate_bullshit = $client->GenerateCorporateBullshit();`
 
 #### Operations
 
@@ -239,8 +244,9 @@ Create an instance: `const generate_corporate_bullshit = client.generate_corpora
 
 #### Example: Load
 
-```ts
-const generate_corporate_bullshit = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
+```php
+// load() returns the bare GenerateCorporateBullshit record (throws on error).
+$generate_corporate_bullshit = $client->GenerateCorporateBullshit()->load(["id" => "generate_corporate_bullshit_id"]);
 ```
 
 
@@ -315,7 +321,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$generatecorporatebullshit = $client->generatecorporatebullshit();
+$generatecorporatebullshit = $client->GenerateCorporateBullshit();
 $generatecorporatebullshit->load(["id" => "example_id"]);
 
 // $generatecorporatebullshit->dataGet() now returns the loaded generatecorporatebullshit data

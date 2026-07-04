@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GenerateCorporateBullshitEntity
 
 ```lua
-local generate_corporate_bullshit = client:generate_corporate_bullshit(nil)
+local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
 ```
 
 ### Fields
@@ -99,7 +99,7 @@ local generate_corporate_bullshit = client:generate_corporate_bullshit(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:generate_corporate_bullshit():load({ id = "generate_corporate_bullshit_id" })
+local result, err = client:GenerateCorporateBullshit():load({ id = "generate_corporate_bullshit_id" })
 ```
 
 ### Common Methods

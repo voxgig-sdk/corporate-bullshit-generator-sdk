@@ -34,9 +34,9 @@ local client = sdk.new()
 ### 3. Load a generatecorporatebullshit
 
 ```lua
-local result, err = client:generatecorporatebullshit():load({ id = "example_id" })
+local generatecorporatebullshit, err = client:GenerateCorporateBullshit():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(generatecorporatebullshit)
 ```
 
 
@@ -82,8 +82,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:generatecorporatebullshit():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:GenerateCorporateBullshit():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -183,17 +183,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local generate_corporate_bullshit, err = client:GenerateCorporateBullshit():load({ id = "example_id" })
+    if err then error(err) end
+    -- generate_corporate_bullshit is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -214,7 +219,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `const generate_corporate_bullshit = client.generate_corporate_bullshit`
+Create an instance: `local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)`
 
 #### Operations
 
@@ -230,8 +235,8 @@ Create an instance: `const generate_corporate_bullshit = client.generate_corpora
 
 #### Example: Load
 
-```ts
-const generate_corporate_bullshit = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
+```lua
+local generate_corporate_bullshit, err = client:GenerateCorporateBullshit():load({ id = "generate_corporate_bullshit_id" })
 ```
 
 
@@ -306,7 +311,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local generatecorporatebullshit = client:generatecorporatebullshit()
+local generatecorporatebullshit = client:GenerateCorporateBullshit()
 generatecorporatebullshit:load({ id = "example_id" })
 
 -- generatecorporatebullshit:data_get() now returns the loaded generatecorporatebullshit data

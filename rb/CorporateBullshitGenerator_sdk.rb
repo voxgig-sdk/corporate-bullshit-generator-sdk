@@ -208,13 +208,7 @@ class CorporateBullshitGeneratorSDK
   end
 
 
-  # Idiomatic facade: client.generate_corporate_bullshit.list / client.generate_corporate_bullshit.load({ "id" => ... })
-  def generate_corporate_bullshit
-    require_relative 'entity/generate_corporate_bullshit_entity'
-    @generate_corporate_bullshit ||= GenerateCorporateBullshitEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.generate_corporate_bullshit instead.
+  # Canonical facade: client.GenerateCorporateBullshit.list / client.GenerateCorporateBullshit.load({ "id" => ... })
   def GenerateCorporateBullshit(data = nil)
     require_relative 'entity/generate_corporate_bullshit_entity'
     GenerateCorporateBullshitEntity.new(self, data)

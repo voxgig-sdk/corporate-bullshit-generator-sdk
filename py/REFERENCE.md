@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GenerateCorporateBullshitEntity
 
 ```python
-generate_corporate_bullshit = client.generate_corporate_bullshit
+generate_corporate_bullshit = client.GenerateCorporateBullshit()
 ```
 
 ### Fields
@@ -96,7 +96,7 @@ generate_corporate_bullshit = client.generate_corporate_bullshit
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.generate_corporate_bullshit.load({"id": "generate_corporate_bullshit_id"})
+result = client.GenerateCorporateBullshit().load({"id": "generate_corporate_bullshit_id"})
 ```
 
 ### Common Methods

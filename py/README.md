@@ -33,10 +33,12 @@ client = CorporateBullshitGeneratorSDK()
 
 ### 3. Load a generatecorporatebullshit
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.generatecorporatebullshit.load({"id": "example_id"})
-    print(result)
+    generatecorporatebullshit = client.GenerateCorporateBullshit().load({"id": "example_id"})
+    print(generatecorporatebullshit)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = CorporateBullshitGeneratorSDK.test()
 
-result = client.generatecorporatebullshit.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+generatecorporatebullshit = client.GenerateCorporateBullshit().load({"id": "test01"})
+# generatecorporatebullshit contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -218,7 +221,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `const generate_corporate_bullshit = client.generate_corporate_bullshit`
+Create an instance: `generate_corporate_bullshit = client.GenerateCorporateBullshit()`
 
 #### Operations
 
@@ -234,8 +237,8 @@ Create an instance: `const generate_corporate_bullshit = client.generate_corpora
 
 #### Example: Load
 
-```ts
-const generate_corporate_bullshit = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
+```python
+generate_corporate_bullshit = client.GenerateCorporateBullshit().load({"id": "generate_corporate_bullshit_id"})
 ```
 
 
@@ -309,7 +312,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-generatecorporatebullshit = client.generatecorporatebullshit
+generatecorporatebullshit = client.GenerateCorporateBullshit()
 generatecorporatebullshit.load({"id": "example_id"})
 
 # generatecorporatebullshit.data_get() now returns the loaded generatecorporatebullshit data

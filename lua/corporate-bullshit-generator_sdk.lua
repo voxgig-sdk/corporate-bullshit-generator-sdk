@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:generate_corporate_bullshit():list() / client:generate_corporate_bullshit():load({ id = ... })
-function CorporateBullshitGeneratorSDK:generate_corporate_bullshit(data)
+-- Idiomatic facade: client:GenerateCorporateBullshit():list() / client:GenerateCorporateBullshit():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function CorporateBullshitGeneratorSDK:GenerateCorporateBullshit(data)
   local EntityMod = require("entity.generate_corporate_bullshit_entity")
   if data == nil then
     if self._generate_corporate_bullshit == nil then
@@ -253,12 +254,6 @@ function CorporateBullshitGeneratorSDK:generate_corporate_bullshit(data)
     end
     return self._generate_corporate_bullshit
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:generate_corporate_bullshit() instead.
-function CorporateBullshitGeneratorSDK:GenerateCorporateBullshit(data)
-  local EntityMod = require("entity.generate_corporate_bullshit_entity")
   return EntityMod.new(self, data)
 end
 

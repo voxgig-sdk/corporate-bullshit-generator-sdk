@@ -233,10 +233,10 @@ class CorporateBullshitGeneratorSDK
 
     private $_generate_corporate_bullshit = null;
 
-    // Idiomatic facade: $client->generate_corporate_bullshit()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GenerateCorporateBullshit() (PHP method
-    // names are case-insensitive).
-    public function generate_corporate_bullshit($data = null)
+    // Canonical facade: $client->GenerateCorporateBullshit()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->generate_corporate_bullshit()
+    // resolves here too.
+    public function GenerateCorporateBullshit($data = null)
     {
         require_once __DIR__ . '/entity/generate_corporate_bullshit_entity.php';
         if ($data === null) {

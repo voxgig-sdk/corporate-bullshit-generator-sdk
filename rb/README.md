@@ -32,8 +32,9 @@ client = CorporateBullshitGeneratorSDK.new
 
 ```ruby
 begin
-  result = client.generatecorporatebullshit.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GenerateCorporateBullshit record (raises on error).
+  generatecorporatebullshit = client.GenerateCorporateBullshit.load({ "id" => "example_id" })
+  puts generatecorporatebullshit
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = CorporateBullshitGeneratorSDK.test
+client = CorporateBullshitGeneratorSDK.test({
+  "entity" => { "generatecorporatebullshit" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.generatecorporatebullshit.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+generatecorporatebullshit = client.GenerateCorporateBullshit.load({ "id" => "test01" })
+puts generatecorporatebullshit
 ```
 
 ### Use a custom fetch function
@@ -218,7 +223,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `const generate_corporate_bullshit = client.generate_corporate_bullshit`
+Create an instance: `generate_corporate_bullshit = client.GenerateCorporateBullshit`
 
 #### Operations
 
@@ -234,8 +239,9 @@ Create an instance: `const generate_corporate_bullshit = client.generate_corpora
 
 #### Example: Load
 
-```ts
-const generate_corporate_bullshit = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
+```ruby
+# load returns the bare GenerateCorporateBullshit record (raises on error).
+generate_corporate_bullshit = client.GenerateCorporateBullshit.load({ "id" => "generate_corporate_bullshit_id" })
 ```
 
 
@@ -310,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-generatecorporatebullshit = client.generatecorporatebullshit
+generatecorporatebullshit = client.GenerateCorporateBullshit
 generatecorporatebullshit.load({ "id" => "example_id" })
 
 # generatecorporatebullshit.data_get now returns the loaded generatecorporatebullshit data

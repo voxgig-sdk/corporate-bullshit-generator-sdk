@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GenerateCorporateBullshitEntity
 
 ```ruby
-generate_corporate_bullshit = client.generate_corporate_bullshit
+generate_corporate_bullshit = client.GenerateCorporateBullshit
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ generate_corporate_bullshit = client.generate_corporate_bullshit
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.generate_corporate_bullshit.load({ "id" => "generate_corporate_bullshit_id" })
+result = client.GenerateCorporateBullshit.load({ "id" => "generate_corporate_bullshit_id" })
 ```
 
 ### Common Methods

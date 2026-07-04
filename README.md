@@ -26,9 +26,9 @@ import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-ge
 
 const client = new CorporateBullshitGeneratorSDK()
 
-// Load generatecorporatebullshit data
-const generatecorporatebullshit = await client.generatecorporatebullshit.load({})
-console.log(generatecorporatebullshit.data)
+// Load generatecorporatebullshit data (returns a GenerateCorporateBullshit)
+const generatecorporatebullshit = await client.GenerateCorporateBullshit().load()
+console.log(generatecorporatebullshit)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK
 client = CorporateBullshitGeneratorSDK()
 
 
-# Load a specific generatecorporatebullshit
-generatecorporatebullshit = client.generatecorporatebullshit.load({"id": "example_id"})
+# Load a specific generatecorporatebullshit (returns the record, raises on error)
+generatecorporatebullshit = client.GenerateCorporateBullshit().load({"id": "example_id"})
 print(generatecorporatebullshit)
 ```
 
@@ -98,8 +98,8 @@ require_once 'corporatebullshitgenerator_sdk.php';
 $client = new CorporateBullshitGeneratorSDK();
 
 
-// Load a specific generatecorporatebullshit
-$generatecorporatebullshit = $client->generatecorporatebullshit()->load(["id" => "example_id"]);
+// Load a specific generatecorporatebullshit (returns the bare record; throws on error)
+$generatecorporatebullshit = $client->GenerateCorporateBullshit()->load(["id" => "example_id"]);
 print_r($generatecorporatebullshit);
 ```
 
@@ -123,8 +123,8 @@ require_relative "CorporateBullshitGenerator_sdk"
 client = CorporateBullshitGeneratorSDK.new
 
 
-# Load a specific generatecorporatebullshit
-generatecorporatebullshit = client.generatecorporatebullshit.load({ "id" => "example_id" })
+# Load a specific generatecorporatebullshit (returns the bare record; raises on error)
+generatecorporatebullshit = client.GenerateCorporateBullshit.load({ "id" => "example_id" })
 puts generatecorporatebullshit
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific generatecorporatebullshit
-local generatecorporatebullshit, err = client:generatecorporatebullshit():load({ id = "example_id" })
+local generatecorporatebullshit, err = client:GenerateCorporateBullshit():load({ id = "example_id" })
 print(generatecorporatebullshit)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CorporateBullshitGeneratorSDK.test()
-const result = await client.generatecorporatebullshit.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const generatecorporatebullshit = await client.GenerateCorporateBullshit().load({ id: 'test01' })
+// generatecorporatebullshit is a bare GenerateCorporateBullshit populated with mock data
+console.log(generatecorporatebullshit)
 ```
 
 ### Python
 
 ```python
 client = CorporateBullshitGeneratorSDK.test()
-result = client.generatecorporatebullshit.load({"id": "test01"})
+generatecorporatebullshit = client.GenerateCorporateBullshit().load({"id": "test01"})
+print(generatecorporatebullshit)
 ```
 
 ### PHP
 
 ```php
-$client = CorporateBullshitGeneratorSDK::test();
-$result = $client->generatecorporatebullshit()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = CorporateBullshitGeneratorSDK::test([
+    "entity" => ["generatecorporatebullshit" => ["test01" => ["id" => "test01"]]],
+]);
+$generatecorporatebullshit = $client->GenerateCorporateBullshit()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GenerateCorporateBullshit(nil).Load(
 ### Ruby
 
 ```ruby
-client = CorporateBullshitGeneratorSDK.test
-result = client.generatecorporatebullshit.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = CorporateBullshitGeneratorSDK.test({
+  "entity" => { "generatecorporatebullshit" => { "test01" => { "id" => "test01" } } },
+})
+generatecorporatebullshit = client.GenerateCorporateBullshit.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:generatecorporatebullshit():load({ id = "test01" })
+local result, err = client:GenerateCorporateBullshit():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 
