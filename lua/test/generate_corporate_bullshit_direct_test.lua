@@ -62,14 +62,12 @@ function generate_corporate_bullshit_direct_setup(mockres)
   local env = runner.env_override({
     ["CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"] = {},
     ["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] = "FALSE",
-    ["CORPORATEBULLSHITGENERATOR_APIKEY"] = "NONE",
   })
 
   local live = env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["CORPORATEBULLSHITGENERATOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

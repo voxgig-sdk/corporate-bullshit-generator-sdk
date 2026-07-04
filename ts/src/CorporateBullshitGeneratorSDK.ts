@@ -2,6 +2,8 @@
 
 import { GenerateCorporateBullshitEntity } from './entity/GenerateCorporateBullshitEntity'
 
+export type * from './CorporateBullshitGeneratorTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class CorporateBullshitGeneratorSDK {
 
 
 
+  _generate_corporate_bullshit?: GenerateCorporateBullshitEntity
+
+  // Idiomatic facade: `client.generate_corporate_bullshit.list()` / `client.generate_corporate_bullshit.load({ id })`.
+  get generate_corporate_bullshit(): GenerateCorporateBullshitEntity {
+    return (this._generate_corporate_bullshit ??= new GenerateCorporateBullshitEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.generate_corporate_bullshit` instead. */
   GenerateCorporateBullshit(data?: any) {
     const self = this
     return new GenerateCorporateBullshitEntity(self,data)

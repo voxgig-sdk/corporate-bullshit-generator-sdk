@@ -117,7 +117,6 @@ func generate_corporate_bullshitBasicSetup(extra map[string]any) *entityTestSetu
 		"CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": idmap,
 		"CORPORATEBULLSHITGENERATOR_TEST_LIVE":      "FALSE",
 		"CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN":   "FALSE",
-		"CORPORATEBULLSHITGENERATOR_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"])
@@ -128,7 +127,6 @@ func generate_corporate_bullshitBasicSetup(extra map[string]any) *entityTestSetu
 	if env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["CORPORATEBULLSHITGENERATOR_APIKEY"],
 			},
 			extra,
 		})

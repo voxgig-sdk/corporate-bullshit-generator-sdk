@@ -245,6 +245,9 @@ func (sdk *CorporateBullshitGeneratorSDK) Direct(fetchargs map[string]any) (map[
 }
 
 
+// GenerateCorporateBullshit returns a GenerateCorporateBullshit entity bound to this client.
+// Idiomatic usage: client.GenerateCorporateBullshit(nil).List(nil, nil) or
+// client.GenerateCorporateBullshit(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *CorporateBullshitGeneratorSDK) GenerateCorporateBullshit(data map[string]any) CorporateBullshitGeneratorEntity {
 	return NewGenerateCorporateBullshitEntityFunc(sdk, data)
 }

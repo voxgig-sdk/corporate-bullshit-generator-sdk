@@ -49,8 +49,7 @@ class TestGenerateCorporateBullshitEntity:
         # LOAD
         generate_corporate_bullshit_ref01_ent = client.GenerateCorporateBullshit(None)
         generate_corporate_bullshit_ref01_match_dt0 = {}
-        generate_corporate_bullshit_ref01_data_dt0_loaded, err = generate_corporate_bullshit_ref01_ent.load(generate_corporate_bullshit_ref01_match_dt0, None)
-        assert err is None
+        generate_corporate_bullshit_ref01_data_dt0_loaded = generate_corporate_bullshit_ref01_ent.load(generate_corporate_bullshit_ref01_match_dt0, None)
         assert generate_corporate_bullshit_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _generate_corporate_bullshit_basic_setup(extra):
         "CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": idmap,
         "CORPORATEBULLSHITGENERATOR_TEST_LIVE": "FALSE",
         "CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN": "FALSE",
-        "CORPORATEBULLSHITGENERATOR_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _generate_corporate_bullshit_basic_setup(extra):
     if env.get("CORPORATEBULLSHITGENERATOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("CORPORATEBULLSHITGENERATOR_APIKEY"),
             },
             extra or {},
         ])

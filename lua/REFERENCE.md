@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## GenerateCorporateBullshitEntity
 
 ```lua
-local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
+local generate_corporate_bullshit = client:generate_corporate_bullshit(nil)
 ```
 
 ### Fields
@@ -100,7 +99,7 @@ local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GenerateCorporateBullshit():load({ id = "generate_corporate_bullshit_id" })
+local result, err = client:generate_corporate_bullshit():load({ id = "generate_corporate_bullshit_id" })
 ```
 
 ### Common Methods

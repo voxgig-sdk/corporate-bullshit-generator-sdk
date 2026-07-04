@@ -10,26 +10,24 @@ This is an unofficial SDK for the Corporate Bullshit Generator public API, gener
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/corporate-bullshit-generator` | `npm install @voxgig-sdk/corporate-bullshit-generator` |
-| Python | `voxgig-sdk-corporate-bullshit-generator` | `pip install voxgig-sdk-corporate-bullshit-generator` |
-| PHP | `voxgig-sdk/corporate-bullshit-generator` | `composer require voxgig-sdk/corporate-bullshit-generator` |
-| Golang | `github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go` | `go get github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go` |
-| Ruby | `voxgig-sdk-corporate-bullshit-generator` | `gem install voxgig-sdk-corporate-bullshit-generator` |
-| Lua | `voxgig-sdk-corporate-bullshit-generator` | `luarocks install voxgig-sdk-corporate-bullshit-generator` |
+| TypeScript | `@voxgig-sdk/corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
+| Python | `voxgig-sdk-corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
+| PHP | `voxgig-sdk/corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go` | `go get github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go@latest` |
+| Ruby | `voxgig-sdk-corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
+| Lua | `voxgig-sdk-corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
 
 ## Quickstart
 
 ### TypeScript
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from 'corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
 
-const client = new CorporateBullshitGeneratorSDK({
-  apikey: process.env.CORPORATE-BULLSHIT-GENERATOR_APIKEY,
-})
+const client = new CorporateBullshitGeneratorSDK()
 
 // Load generatecorporatebullshit data
-const generatecorporatebullshit = await client.GenerateCorporateBullshit().load({})
+const generatecorporatebullshit = await client.generatecorporatebullshit.load({})
 console.log(generatecorporatebullshit.data)
 ```
 
@@ -71,7 +69,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GenerateCorporateBullshit** |  | `/` |
+| **GenerateCorporateBullshit** | The GenerateCorporateBullshit entity (load). | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -81,16 +79,13 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
-import os
 from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK
 
-client = CorporateBullshitGeneratorSDK({
-    "apikey": os.environ.get("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
-})
+client = CorporateBullshitGeneratorSDK()
 
 
 # Load a specific generatecorporatebullshit
-generatecorporatebullshit, err = client.GenerateCorporateBullshit().load({"id": "example_id"})
+generatecorporatebullshit = client.generatecorporatebullshit.load({"id": "example_id"})
 print(generatecorporatebullshit)
 ```
 
@@ -100,13 +95,11 @@ print(generatecorporatebullshit)
 <?php
 require_once 'corporatebullshitgenerator_sdk.php';
 
-$client = new CorporateBullshitGeneratorSDK([
-    "apikey" => getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
-]);
+$client = new CorporateBullshitGeneratorSDK();
 
 
 // Load a specific generatecorporatebullshit
-[$generatecorporatebullshit, $err] = $client->GenerateCorporateBullshit()->load(["id" => "example_id"]);
+$generatecorporatebullshit = $client->generatecorporatebullshit()->load(["id" => "example_id"]);
 print_r($generatecorporatebullshit);
 ```
 
@@ -115,9 +108,7 @@ print_r($generatecorporatebullshit);
 ```go
 import sdk "github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go"
 
-client := sdk.NewCorporateBullshitGeneratorSDK(map[string]any{
-    "apikey": os.Getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
-})
+client := sdk.New()
 
 // Load generatecorporatebullshit data
 generatecorporatebullshit, err := client.GenerateCorporateBullshit(nil).Load(map[string]any{}, nil)
@@ -129,13 +120,11 @@ fmt.Println(generatecorporatebullshit)
 ```ruby
 require_relative "CorporateBullshitGenerator_sdk"
 
-client = CorporateBullshitGeneratorSDK.new({
-  "apikey" => ENV["CORPORATE-BULLSHIT-GENERATOR_APIKEY"],
-})
+client = CorporateBullshitGeneratorSDK.new
 
 
 # Load a specific generatecorporatebullshit
-generatecorporatebullshit, err = client.GenerateCorporateBullshit().load({ "id" => "example_id" })
+generatecorporatebullshit = client.generatecorporatebullshit.load({ "id" => "example_id" })
 puts generatecorporatebullshit
 ```
 
@@ -144,13 +133,11 @@ puts generatecorporatebullshit
 ```lua
 local sdk = require("corporate-bullshit-generator_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("CORPORATE-BULLSHIT-GENERATOR_APIKEY"),
-})
+local client = sdk.new()
 
 
 -- Load a specific generatecorporatebullshit
-local generatecorporatebullshit, err = client:GenerateCorporateBullshit():load({ id = "example_id" })
+local generatecorporatebullshit, err = client:generatecorporatebullshit():load({ id = "example_id" })
 print(generatecorporatebullshit)
 ```
 
@@ -163,7 +150,7 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = CorporateBullshitGeneratorSDK.test()
-const result = await client.GenerateCorporateBullshit().load({ id: 'test01' })
+const result = await client.generatecorporatebullshit.load({ id: 'test01' })
 // result.ok === true, result.data contains mock data
 ```
 
@@ -171,14 +158,14 @@ const result = await client.GenerateCorporateBullshit().load({ id: 'test01' })
 
 ```python
 client = CorporateBullshitGeneratorSDK.test()
-result, err = client.GenerateCorporateBullshit().load({"id": "test01"})
+result = client.generatecorporatebullshit.load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
 $client = CorporateBullshitGeneratorSDK::test();
-[$result, $err] = $client->GenerateCorporateBullshit()->load(["id" => "test01"]);
+$result = $client->generatecorporatebullshit()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -194,14 +181,14 @@ result, err := client.GenerateCorporateBullshit(nil).Load(
 
 ```ruby
 client = CorporateBullshitGeneratorSDK.test
-result, err = client.GenerateCorporateBullshit().load({ "id" => "test01" })
+result = client.generatecorporatebullshit.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:GenerateCorporateBullshit():load({ id = "test01" })
+local result, err = client:generatecorporatebullshit():load({ id = "test01" })
 ```
 
 ## How it works
@@ -254,7 +241,7 @@ console.log(result.data)
 
 **Python:**
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
@@ -263,7 +250,7 @@ result, err = client.direct({
 
 **PHP:**
 ```php
-[$result, $err] = $client->direct([
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
@@ -281,7 +268,7 @@ result, err := client.Direct(map[string]any{
 
 **Ruby:**
 ```ruby
-result, err = client.direct({
+result = client.direct({
   "path" => "/api/resource/{id}",
   "method" => "GET",
   "params" => { "id" => "example" },

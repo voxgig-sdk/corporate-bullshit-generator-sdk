@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GenerateCorporateBullshitLoadMatch
+---@param ctrl? table
+---@return GenerateCorporateBullshit
+---@return string? err
 function GenerateCorporateBullshitEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

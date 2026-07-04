@@ -15,9 +15,6 @@ module CorporateBullshitGeneratorConfig
       },
       "options" => {
         "base" => "https://corporatebs-generator.sameerkumar.website",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

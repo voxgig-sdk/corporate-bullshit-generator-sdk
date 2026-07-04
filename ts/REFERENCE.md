@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `CorporateBullshitGeneratorSDK.test()`.
 ## GenerateCorporateBullshitEntity
 
 ```ts
-const generate_corporate_bullshit = client.GenerateCorporateBullshit()
+const generate_corporate_bullshit = client.generate_corporate_bullshit
 ```
 
 ### Fields
@@ -126,7 +125,7 @@ const generate_corporate_bullshit = client.GenerateCorporateBullshit()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GenerateCorporateBullshit().load({ id: 'generate_corporate_bullshit_id' })
+const result = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
 ```
 
 ### Common Methods

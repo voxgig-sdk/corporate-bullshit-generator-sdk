@@ -9,9 +9,12 @@ The TypeScript SDK for the CorporateBullshitGenerator API — a type-safe, entit
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/corporate-bullshit-generator
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from 'corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
 
-const client = new CorporateBullshitGeneratorSDK({
-  apikey: process.env.CORPORATE-BULLSHIT-GENERATOR_APIKEY,
-})
+const client = new CorporateBullshitGeneratorSDK()
 ```
 
 ### 3. Load a generatecorporatebullshit
 
 ```ts
-const result = await client.GenerateCorporateBullshit().load({ id: 'example_id' })
+const result = await client.generatecorporatebullshit.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = CorporateBullshitGeneratorSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.generatecorporatebullshit.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new CorporateBullshitGeneratorSDK({ apikey: '...' })
+const client = new CorporateBullshitGeneratorSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.generatecorporatebullshit
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new CorporateBullshitGeneratorSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -133,8 +133,7 @@ const client = new CorporateBullshitGeneratorSDK({
 Create a `.env.local` file at the project root:
 
 ```
-CORPORATE-BULLSHIT-GENERATOR_TEST_LIVE=TRUE
-CORPORATE-BULLSHIT-GENERATOR_APIKEY=<your-key>
+CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new CorporateBullshitGeneratorSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new CorporateBullshitGeneratorSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -266,7 +263,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `const generate_corporate_bullshit = client.GenerateCorporateBullshit()`
+Create an instance: `const generate_corporate_bullshit = client.generate_corporate_bullshit`
 
 #### Operations
 
@@ -283,7 +280,7 @@ Create an instance: `const generate_corporate_bullshit = client.GenerateCorporat
 #### Example: Load
 
 ```ts
-const generate_corporate_bullshit = await client.GenerateCorporateBullshit().load({ id: 'generate_corporate_bullshit_id' })
+const generate_corporate_bullshit = await client.generate_corporate_bullshit.load({ id: 'generate_corporate_bullshit_id' })
 ```
 
 
@@ -344,7 +341,7 @@ corporate-bullshit-generator/
 Import the SDK from the package root:
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from 'corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
 ```
 
 ### Entity state
@@ -354,11 +351,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const generatecorporatebullshit = client.generatecorporatebullshit
+await generatecorporatebullshit.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// generatecorporatebullshit.data() now returns the loaded generatecorporatebullshit data
+// generatecorporatebullshit.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration
