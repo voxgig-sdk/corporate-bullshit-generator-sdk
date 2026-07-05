@@ -97,7 +97,7 @@ generate_corporate_bullshit := client.GenerateCorporateBullshit(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | ``$STRING`` | No |  |
+| `phrase` | `string` | No |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ generate_corporate_bullshit := client.GenerateCorporateBullshit(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GenerateCorporateBullshit(nil).Load(map[string]any{"id": "generate_corporate_bullshit_id"}, nil)
+result, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
 ```
 
 ### Common Methods

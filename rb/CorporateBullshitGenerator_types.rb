@@ -17,7 +17,7 @@ GenerateCorporateBullshit = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GenerateCorporateBullshit#load (any subset of GenerateCorporateBullshit fields).
+# Request payload for GenerateCorporateBullshit#load.
 #
 # @!attribute [rw] phrase
 #   @return [String, nil]

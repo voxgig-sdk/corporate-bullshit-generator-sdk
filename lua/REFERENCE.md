@@ -90,7 +90,7 @@ local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | ``$STRING`` | No |  |
+| `phrase` | `string` | No |  |
 
 ### Operations
 
@@ -99,7 +99,7 @@ local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GenerateCorporateBullshit():load({ id = "generate_corporate_bullshit_id" })
+local result, err = client:GenerateCorporateBullshit():load()
 ```
 
 ### Common Methods

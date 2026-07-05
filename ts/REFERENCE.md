@@ -116,7 +116,7 @@ const generate_corporate_bullshit = client.GenerateCorporateBullshit()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | ``$STRING`` | No |  |
+| `phrase` | `string` | No |  |
 
 ### Operations
 
@@ -125,7 +125,7 @@ const generate_corporate_bullshit = client.GenerateCorporateBullshit()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GenerateCorporateBullshit().load({ id: 'generate_corporate_bullshit_id' })
+const result = await client.GenerateCorporateBullshit().load()
 ```
 
 ### Common Methods

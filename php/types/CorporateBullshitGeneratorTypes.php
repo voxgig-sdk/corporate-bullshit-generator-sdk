@@ -18,7 +18,7 @@ class GenerateCorporateBullshit
     public ?string $phrase = null;
 }
 
-/** Match filter for GenerateCorporateBullshit#load (any subset of GenerateCorporateBullshit fields). */
+/** Request payload for GenerateCorporateBullshit#load. */
 class GenerateCorporateBullshitLoadMatch
 {
     public ?string $phrase = null;

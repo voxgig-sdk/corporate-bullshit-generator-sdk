@@ -8,7 +8,7 @@ Complete API reference for the CorporateBullshitGenerator Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'corporate-bullshit-generator_sdk'
+require_relative 'CorporateBullshitGenerator_sdk'
 
 client = CorporateBullshitGeneratorSDK.new(options)
 ```
@@ -93,7 +93,7 @@ generate_corporate_bullshit = client.GenerateCorporateBullshit
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | ``$STRING`` | No |  |
+| `phrase` | `String` | No |  |
 
 ### Operations
 
@@ -102,7 +102,7 @@ generate_corporate_bullshit = client.GenerateCorporateBullshit
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GenerateCorporateBullshit.load({ "id" => "generate_corporate_bullshit_id" })
+result = client.GenerateCorporateBullshit.load()
 ```
 
 ### Common Methods

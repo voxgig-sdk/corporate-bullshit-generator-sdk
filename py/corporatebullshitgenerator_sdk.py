@@ -221,7 +221,7 @@ class CorporateBullshitGeneratorSDK:
 
 
     def GenerateCorporateBullshit(self, data=None) -> "GenerateCorporateBullshitEntity":
-        """Entity factory: client.GenerateCorporateBullshit().list({}) / client.GenerateCorporateBullshit().load({"id": ...})."""
+        """Entity factory: client.GenerateCorporateBullshit().list() / client.GenerateCorporateBullshit().load({"id": ...})."""
         from entity.generate_corporate_bullshit_entity import GenerateCorporateBullshitEntity
         return GenerateCorporateBullshitEntity(self, data)
 

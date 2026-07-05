@@ -8,7 +8,7 @@ Complete API reference for the CorporateBullshitGenerator Python SDK.
 ### Constructor
 
 ```python
-from corporate-bullshit-generator_sdk import CorporateBullshitGeneratorSDK
+from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK
 
 client = CorporateBullshitGeneratorSDK(options)
 ```
@@ -87,7 +87,7 @@ generate_corporate_bullshit = client.GenerateCorporateBullshit()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | ``$STRING`` | No |  |
+| `phrase` | `str` | No |  |
 
 ### Operations
 
@@ -96,7 +96,7 @@ generate_corporate_bullshit = client.GenerateCorporateBullshit()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GenerateCorporateBullshit().load({"id": "generate_corporate_bullshit_id"})
+result = client.GenerateCorporateBullshit().load()
 ```
 
 ### Common Methods

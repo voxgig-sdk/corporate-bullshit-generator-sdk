@@ -13,8 +13,7 @@ type GenerateCorporateBullshit struct {
 	Phrase *string `json:"phrase,omitempty"`
 }
 
-// GenerateCorporateBullshitLoadMatch mirrors the generate_corporate_bullshit fields as an all-optional match
-// filter (Go analog of Partial<GenerateCorporateBullshit>).
+// GenerateCorporateBullshitLoadMatch is the typed request payload for GenerateCorporateBullshit.LoadTyped.
 type GenerateCorporateBullshitLoadMatch struct {
 	Phrase *string `json:"phrase,omitempty"`
 }

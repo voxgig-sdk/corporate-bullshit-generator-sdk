@@ -9,5 +9,7 @@ export interface GenerateCorporateBullshit {
   phrase?: string
 }
 
-export type GenerateCorporateBullshitLoadMatch = Partial<GenerateCorporateBullshit>
+export interface GenerateCorporateBullshitLoadMatch {
+  phrase?: string
+}
 

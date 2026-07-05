@@ -10,6 +10,7 @@
 ---@field phrase? string
 
 ---@class GenerateCorporateBullshitLoadMatch
+---@field phrase? string
 
 local M = {}
 
