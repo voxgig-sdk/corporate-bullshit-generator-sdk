@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single generatecorporatebullshit — the value is the loaded record.
-    generatecorporatebullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
+    // Load a single generateCorporateBullshit — the value is the loaded record.
+    generateCorporateBullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(generatecorporatebullshit)
+    fmt.Println(generateCorporateBullshit)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-generatecorporatebullshit, err := client.GenerateCorporateBullshit(nil).Load(
+generateCorporateBullshit, err := client.GenerateCorporateBullshit(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(generatecorporatebullshit) // the returned mock data
+fmt.Println(generateCorporateBullshit) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    generatecorporatebullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
+    generateCorporateBullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // generatecorporatebullshit is the returned record
+    // generateCorporateBullshit is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -271,7 +271,7 @@ API path: `/`
 
 ### GenerateCorporateBullshit
 
-Create an instance: `generate_corporate_bullshit := client.GenerateCorporateBullshit(nil)`
+Create an instance: `generateCorporateBullshit := client.GenerateCorporateBullshit(nil)`
 
 #### Operations
 
@@ -288,11 +288,11 @@ Create an instance: `generate_corporate_bullshit := client.GenerateCorporateBull
 #### Example: Load
 
 ```go
-generate_corporate_bullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
+generateCorporateBullshit, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(generate_corporate_bullshit) // the loaded record
+fmt.Println(generateCorporateBullshit) // the loaded record
 ```
 
 

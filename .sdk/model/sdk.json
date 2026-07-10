@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -196,14 +193,17 @@
           "name": "BSD-3-Clause",
           "url": "https://opensource.org/licenses/BSD-3-Clause"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://corporatebs-generator.sameerkumar.website"
           }
         ],
+        "summary": "This API generates random corporate bullshit phrases that can be used in applications to mimic business jargon.",
         "title": "Corporate Bullshit Generator",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://github.com/sameerkumar18/corporate-bs-generator-api"
       },
       "option": {},
       "target": {
@@ -256,6 +256,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -306,6 +309,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

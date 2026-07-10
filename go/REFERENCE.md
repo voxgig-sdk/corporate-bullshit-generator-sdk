@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GenerateCorporateBullshitEntity
 
 ```go
-generate_corporate_bullshit := client.GenerateCorporateBullshit(nil)
+generateCorporateBullshit := client.GenerateCorporateBullshit(nil)
+fmt.Println(generateCorporateBullshit.GetName()) // "generate_corporate_bullshit"
 ```
 
 ### Fields
@@ -107,6 +108,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GenerateCorporateBullshit(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

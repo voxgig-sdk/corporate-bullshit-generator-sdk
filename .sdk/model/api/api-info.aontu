@@ -19,9 +19,9 @@ main: {
           url: "https://corporatebs-generator.sameerkumar.website"
         }
       ]
+      summary: "This API generates random corporate bullshit phrases that can be used in applications to mimic business jargon."
       title: "Corporate Bullshit Generator"
       version: "1.0.0"
+      website: "https://github.com/sameerkumar18/corporate-bs-generator-api"
     }
   }
-}
-
