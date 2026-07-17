@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- CorporateBullshitGenerator SDK exists test
 
 local sdk = require("corporate-bullshit-generator_sdk")
 
