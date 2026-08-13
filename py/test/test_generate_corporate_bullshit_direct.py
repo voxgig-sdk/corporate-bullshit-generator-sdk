@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from corporatebullshitgenerator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK
-from core import helpers
+from corporatebullshitgenerator_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _generate_corporate_bullshit_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": {},
-        "CORPORATEBULLSHITGENERATOR_TEST_LIVE": "FALSE",
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID": {},
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("CORPORATEBULLSHITGENERATOR_TEST_LIVE") == "TRUE"
+    live = env.get("CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

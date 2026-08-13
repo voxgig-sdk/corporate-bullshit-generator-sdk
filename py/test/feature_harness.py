@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import CorporateBullshitGeneratorControl
-from core.error import CorporateBullshitGeneratorError
-from core.result import CorporateBullshitGeneratorResult
-from core.spec import CorporateBullshitGeneratorSpec
+from corporatebullshitgenerator_sdk.config import make_config
+from corporatebullshitgenerator_sdk.features import _make_feature
+from corporatebullshitgenerator_sdk.core.control import CorporateBullshitGeneratorControl
+from corporatebullshitgenerator_sdk.core.error import CorporateBullshitGeneratorError
+from corporatebullshitgenerator_sdk.core.result import CorporateBullshitGeneratorResult
+from corporatebullshitgenerator_sdk.core.spec import CorporateBullshitGeneratorSpec
 
 
 # True when this SDK was generated with the named feature.

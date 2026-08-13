@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ CorporateBullshitGeneratorUtility::setRegistrar(function (CorporateBullshitGener
     $u->prepare_params = [CorporateBullshitGeneratorPrepareParams::class, 'call'];
     $u->prepare_path = [CorporateBullshitGeneratorPreparePath::class, 'call'];
     $u->prepare_query = [CorporateBullshitGeneratorPrepareQuery::class, 'call'];
+    $u->graphql_body = [CorporateBullshitGeneratorGraphql::class, 'body'];
+    $u->graphql_errors = [CorporateBullshitGeneratorGraphql::class, 'errors'];
     $u->result_basic = [CorporateBullshitGeneratorResultBasic::class, 'call'];
     $u->result_body = [CorporateBullshitGeneratorResultBody::class, 'call'];
     $u->result_headers = [CorporateBullshitGeneratorResultHeaders::class, 'call'];

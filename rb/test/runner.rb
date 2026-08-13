@@ -23,8 +23,8 @@ module CorporateBullshitGeneratorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("CORPORATEBULLSHITGENERATOR_TEST_LIVE")
-    override = getenv("CORPORATEBULLSHITGENERATOR_TEST_OVERRIDE")
+    live = getenv("CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE")
+    override = getenv("CORPORATE_BULLSHIT_GENERATOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module CorporateBullshitGeneratorTestRunner
       end
     end
 
-    explain = getenv("CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN")
-    m["CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("CORPORATE_BULLSHIT_GENERATOR_TEST_EXPLAIN")
+    m["CORPORATE_BULLSHIT_GENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

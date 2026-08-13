@@ -60,11 +60,11 @@ function generate_corporate_bullshit_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"] = {},
-    ["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] = "FALSE",
+    ["CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"] = {},
+    ["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

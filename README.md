@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = CorporateBullshitGeneratorSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = CorporateBullshitGeneratorSDK.test({
+  entity: {
+    generate_corporate_bullshit: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const generatecorporatebullshit = await client.GenerateCorporateBullshit().load()
-// generatecorporatebullshit is a bare GenerateCorporateBullshit populated with mock data
+// generatecorporatebullshit is the GenerateCorporateBullshit entity, populated with mock data
+// — call generatecorporatebullshit.data() for the record itself
 console.log(generatecorporatebullshit)
 ```
 
@@ -182,7 +191,7 @@ require_once 'corporatebullshitgenerator_sdk.php';
 $client = new CorporateBullshitGeneratorSDK();
 
 
-// Load a specific generatecorporatebullshit (returns the bare record; throws on error)
+// Load a specific generatecorporatebullshit (returns the ENTITY; call data_get() for the record; throws on error)
 $generatecorporatebullshit = $client->GenerateCorporateBullshit()->load();
 print_r($generatecorporatebullshit);
 ```
@@ -210,7 +219,7 @@ require_relative "CorporateBullshitGenerator_sdk"
 client = CorporateBullshitGeneratorSDK.new
 
 
-# Load a specific generatecorporatebullshit (returns the bare record; raises on error)
+# Load a specific generatecorporatebullshit (returns the ENTITY; call data_get for the record)
 generatecorporatebullshit = client.GenerateCorporateBullshit.load()
 puts generatecorporatebullshit
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/sameerkumar18/corporate-bs-generator-api](https://github.com/sameerkumar18/corporate-bs-generator-api)
 

@@ -34,7 +34,7 @@ client = CorporateBullshitGeneratorSDK.new
 
 ```ruby
 begin
-  # load returns the bare GenerateCorporateBullshit record (raises on error).
+  # load returns the ENTITY — call data_get for the GenerateCorporateBullshit record (raises on error).
   generatecorporatebullshit = client.GenerateCorporateBullshit.load()
   puts generatecorporatebullshit
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = CorporateBullshitGeneratorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 generatecorporatebullshit = client.GenerateCorporateBullshit.load()
 puts generatecorporatebullshit
 ```
@@ -264,7 +265,7 @@ Create an instance: `generate_corporate_bullshit = client.GenerateCorporateBulls
 #### Example: Load
 
 ```ruby
-# load returns the bare GenerateCorporateBullshit record (raises on error).
+# load returns the ENTITY — call data_get for the GenerateCorporateBullshit record (raises on error).
 generate_corporate_bullshit = client.GenerateCorporateBullshit.load()
 ```
 

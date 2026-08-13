@@ -33,7 +33,7 @@ class GenerateCorporateBullshitEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -77,22 +77,22 @@ function generate_corporate_bullshit_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID");
+    $entid_env_raw = getenv("CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID" => $idmap,
-        "CORPORATEBULLSHITGENERATOR_TEST_LIVE" => "FALSE",
-        "CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN" => "FALSE",
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID" => $idmap,
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE" => "FALSE",
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"]);
+        $env["CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] === "TRUE") {
+    if ($env["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -101,13 +101,13 @@ function generate_corporate_bullshit_basic_setup($extra)
         $client = new CorporateBullshitGeneratorSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] === "TRUE";
+    $live = $env["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["CORPORATEBULLSHITGENERATOR_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["CORPORATE_BULLSHIT_GENERATOR_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

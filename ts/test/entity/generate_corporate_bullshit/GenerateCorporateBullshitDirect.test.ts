@@ -19,11 +19,15 @@ import {
 describe('GenerateCorporateBullshitDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when CORPORATEBULLSHITGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('CORPORATEBULLSHITGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new CorporateBullshitGeneratorSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID': {},
-    'CORPORATEBULLSHITGENERATOR_TEST_LIVE': 'FALSE',
+    'CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID': {},
+    'CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.CORPORATEBULLSHITGENERATOR_TEST_LIVE
+  const live = 'TRUE' === env.CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE
 
   if (live) {
     const client = new CorporateBullshitGeneratorSDK({
     })
 
-    let idmap: any = env['CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID']
+    let idmap: any = env['CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

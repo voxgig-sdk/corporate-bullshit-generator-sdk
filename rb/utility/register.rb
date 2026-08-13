@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ CorporateBullshitGeneratorUtility.registrar = ->(u) {
   u.prepare_params = CorporateBullshitGeneratorUtilities::PrepareParams
   u.prepare_path = CorporateBullshitGeneratorUtilities::PreparePath
   u.prepare_query = CorporateBullshitGeneratorUtilities::PrepareQuery
+  u.graphql_body = CorporateBullshitGeneratorUtilities::GraphqlBody
+  u.graphql_errors = CorporateBullshitGeneratorUtilities::GraphqlErrors
   u.result_basic = CorporateBullshitGeneratorUtilities::ResultBasic
   u.result_body = CorporateBullshitGeneratorUtilities::ResultBody
   u.result_headers = CorporateBullshitGeneratorUtilities::ResultHeaders

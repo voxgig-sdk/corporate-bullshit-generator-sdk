@@ -65,11 +65,11 @@ function generate_corporate_bullshit_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "CORPORATEBULLSHITGENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID" => [],
-        "CORPORATEBULLSHITGENERATOR_TEST_LIVE" => "FALSE",
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_GENERATE_CORPORATE_BULLSHIT_ENTID" => [],
+        "CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["CORPORATEBULLSHITGENERATOR_TEST_LIVE"] === "TRUE";
+    $live = $env["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

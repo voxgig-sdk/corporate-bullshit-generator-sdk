@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = CorporateBullshitGeneratorSDK.test()
 
 const generatecorporatebullshit = await client.GenerateCorporateBullshit().load()
-// generatecorporatebullshit is a bare entity populated with mock response data
+// generatecorporatebullshit is the entity, populated with mock response data
+// — call generatecorporatebullshit.data() for the record itself
 console.log(generatecorporatebullshit)
 ```
 

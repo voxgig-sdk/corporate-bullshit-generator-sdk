@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# CorporateBullshitGenerator SDK exists test
 
 import pytest
 from corporatebullshitgenerator_sdk import CorporateBullshitGeneratorSDK

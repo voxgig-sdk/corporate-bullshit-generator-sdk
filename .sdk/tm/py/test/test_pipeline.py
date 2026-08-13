@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import CorporateBullshitGeneratorSDK
-from core.error import CorporateBullshitGeneratorError
-from core.result import CorporateBullshitGeneratorResult
-from core.response import CorporateBullshitGeneratorResponse
-from core.spec import CorporateBullshitGeneratorSpec
-from feature.base_feature import CorporateBullshitGeneratorBaseFeature
+from projectname_sdk.core.error import CorporateBullshitGeneratorError
+from projectname_sdk.core.result import CorporateBullshitGeneratorResult
+from projectname_sdk.core.response import CorporateBullshitGeneratorResponse
+from projectname_sdk.core.spec import CorporateBullshitGeneratorSpec
+from projectname_sdk.feature.base_feature import CorporateBullshitGeneratorBaseFeature
 
 
 def _client():
