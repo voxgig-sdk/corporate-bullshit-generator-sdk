@@ -28,7 +28,7 @@ class CorporateBullshitGeneratorSDK
     utility = CorporateBullshitGeneratorUtility.new
     @_utility = utility
 
-    config = CorporateBullshitGeneratorConfig.make_config
+    config = CorporateBullshitGeneratorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

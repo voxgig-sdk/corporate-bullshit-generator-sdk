@@ -40,7 +40,7 @@ class CorporateBullshitGeneratorSDK
         $utility = new CorporateBullshitGeneratorUtility();
         $this->_utility = $utility;
 
-        $config = CorporateBullshitGeneratorConfig::make_config();
+        $config = CorporateBullshitGeneratorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

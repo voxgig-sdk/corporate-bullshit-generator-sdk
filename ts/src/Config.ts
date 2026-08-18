@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://corporatebs-generator.sameerkumar.website',
+    base: "https://corporatebs-generator.sameerkumar.website",
 
     headers: {
       "content-type": "application/json"
@@ -55,11 +55,8 @@ class Config {
     "generate_corporate_bullshit": {
       "fields": [
         {
-          "active": true,
           "name": "phrase",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         }
       ],
       "name": "generate_corporate_bullshit",
@@ -69,7 +66,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -79,11 +75,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

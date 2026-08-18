@@ -15,7 +15,7 @@ require_relative "../CorporateBullshitGenerator_sdk"
 module CorporateBullshitGeneratorFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = CorporateBullshitGeneratorConfig.make_config["feature"]
+    f = CorporateBullshitGeneratorConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

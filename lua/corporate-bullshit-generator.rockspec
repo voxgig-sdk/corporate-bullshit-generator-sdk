@@ -23,6 +23,7 @@ build = {
   modules = {
     ["corporate-bullshit-generator_sdk"] = "corporate-bullshit-generator_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }
