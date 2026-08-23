@@ -235,7 +235,7 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `phrase` |  |
+| `phrase` | The generated corporate bullshit phrase |
 
 Operations: Load.
 
@@ -260,7 +260,7 @@ Create an instance: `generate_corporate_bullshit = client.GenerateCorporateBulls
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `phrase` | `String` |  |
+| `phrase` | `String` | The generated corporate bullshit phrase |
 
 #### Example: Load
 

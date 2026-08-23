@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "CorporateBullshitGenerator",
+      slug = "corporate-bullshit-generator",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,6 +32,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "phrase",
+            ["short"] = "The generated corporate bullshit phrase",
             ["type"] = "`$STRING`",
           },
         },

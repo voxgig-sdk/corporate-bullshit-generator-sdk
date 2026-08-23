@@ -33,6 +33,9 @@ class CorporateBullshitGeneratorConfig
         return [
             "main" => [
                 "name" => "CorporateBullshitGenerator",
+                "slug" => "corporate-bullshit-generator",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,6 +58,7 @@ class CorporateBullshitGeneratorConfig
           'fields' => [
             [
               'name' => 'phrase',
+              'short' => 'The generated corporate bullshit phrase',
               'type' => '`$STRING`',
             ],
           ],

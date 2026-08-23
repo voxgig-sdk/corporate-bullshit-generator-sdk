@@ -19,6 +19,9 @@ module CorporateBullshitGeneratorConfig
     {
       "main" => {
         "name" => "CorporateBullshitGenerator",
+        "slug" => "corporate-bullshit-generator",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,6 +44,7 @@ module CorporateBullshitGeneratorConfig
           "fields" => [
             {
               "name" => "phrase",
+              "short" => "The generated corporate bullshit phrase",
               "type" => "`$STRING`",
             },
           ],

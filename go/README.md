@@ -6,7 +6,7 @@ The Golang SDK for the CorporateBullshitGenerator API — an entity-oriented cli
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.GenerateCorporateBullshit(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,7 +258,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"phrase"` |  |
+| `"phrase"` | The generated corporate bullshit phrase |
 
 Operations: Load.
 
@@ -283,7 +283,7 @@ Create an instance: `generateCorporateBullshit := client.GenerateCorporateBullsh
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `phrase` | `string` |  |
+| `phrase` | `string` | The generated corporate bullshit phrase |
 
 #### Example: Load
 

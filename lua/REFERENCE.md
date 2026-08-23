@@ -90,7 +90,7 @@ local generate_corporate_bullshit = client:GenerateCorporateBullshit(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | `string` | No |  |
+| `phrase` | `string` | No | The generated corporate bullshit phrase |
 
 ### Operations
 

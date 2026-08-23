@@ -93,7 +93,7 @@ generate_corporate_bullshit = client.GenerateCorporateBullshit
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | `String` | No |  |
+| `phrase` | `String` | No | The generated corporate bullshit phrase |
 
 ### Operations
 

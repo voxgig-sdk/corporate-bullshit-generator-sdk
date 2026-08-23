@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "CorporateBullshitGenerator",
+            "slug": "corporate-bullshit-generator",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,6 +53,7 @@ def make_config():
         "fields": [
           {
             "name": "phrase",
+            "short": "The generated corporate bullshit phrase",
             "type": "`$STRING`",
           },
         ],

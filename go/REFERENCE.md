@@ -98,7 +98,7 @@ fmt.Println(generateCorporateBullshit.GetName()) // "generate_corporate_bullshit
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | `string` | No |  |
+| `phrase` | `string` | No | The generated corporate bullshit phrase |
 
 ### Operations
 

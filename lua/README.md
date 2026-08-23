@@ -225,7 +225,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `phrase` |  |
+| `phrase` | The generated corporate bullshit phrase |
 
 Operations: Load.
 
@@ -250,7 +250,7 @@ Create an instance: `local generate_corporate_bullshit = client:GenerateCorporat
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `phrase` | `string` |  |
+| `phrase` | `string` | The generated corporate bullshit phrase |
 
 #### Example: Load
 

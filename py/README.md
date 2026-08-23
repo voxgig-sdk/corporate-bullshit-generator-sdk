@@ -241,7 +241,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `phrase` |  |
+| `phrase` | The generated corporate bullshit phrase |
 
 Operations: Load.
 
@@ -266,7 +266,7 @@ Create an instance: `generate_corporate_bullshit = client.GenerateCorporateBulls
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `phrase` | `str` |  |
+| `phrase` | `str` | The generated corporate bullshit phrase |
 
 #### Example: Load
 

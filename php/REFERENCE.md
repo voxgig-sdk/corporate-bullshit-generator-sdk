@@ -92,7 +92,7 @@ $generate_corporate_bullshit = $client->GenerateCorporateBullshit();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `phrase` | `string` | No |  |
+| `phrase` | `string` | No | The generated corporate bullshit phrase |
 
 ### Operations
 

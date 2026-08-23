@@ -8,6 +8,7 @@ main: kit: entity: generate_corporate_bullshit: {
     {
       name: "phrase"
       req: false
+      short: "The generated corporate bullshit phrase"
       type: "`$STRING`"
     }
   ]

@@ -245,7 +245,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `phrase` |  |
+| `phrase` | The generated corporate bullshit phrase |
 
 Operations: Load.
 
@@ -270,7 +270,7 @@ Create an instance: `$generate_corporate_bullshit = $client->GenerateCorporateBu
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `phrase` | `string` |  |
+| `phrase` | `string` | The generated corporate bullshit phrase |
 
 #### Example: Load
 

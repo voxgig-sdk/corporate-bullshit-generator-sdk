@@ -36,6 +36,7 @@
               "active": true,
               "name": "phrase",
               "req": false,
+              "short": "The generated corporate bullshit phrase",
               "type": "`$STRING`"
             }
           ],
