@@ -28,6 +28,7 @@ module CorporateBullshitGeneratorConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
