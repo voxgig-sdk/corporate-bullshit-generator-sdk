@@ -50,7 +50,7 @@ func TestGenerateCorporateBullshitEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		generateCorporateBullshitRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.generate_corporate_bullshit", setup.data)))
+		generateCorporateBullshitRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.generate_corporate_bullshit")))
 		var generateCorporateBullshitRef01Data map[string]any
 		if len(generateCorporateBullshitRef01DataRaw) > 0 {
 			generateCorporateBullshitRef01Data = core.ToMapAny(generateCorporateBullshitRef01DataRaw[0][1])
@@ -97,7 +97,7 @@ func generate_corporate_bullshitBasicSetup(extra map[string]any) *entityTestSetu
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"generate_corporate_bullshit01", "generate_corporate_bullshit02", "generate_corporate_bullshit03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -125,10 +125,22 @@ func generate_corporate_bullshitBasicSetup(extra map[string]any) *entityTestSetu
 	}
 
 	if env["CORPORATE_BULLSHIT_GENERATOR_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewCorporateBullshitGeneratorSDK(core.ToMapAny(mergedOpts))
 	}
