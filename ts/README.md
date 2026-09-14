@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator-sdk'
 
 const client = new CorporateBullshitGeneratorSDK()
 ```
@@ -401,7 +401,7 @@ corporate-bullshit-generator/
 Import the SDK from the package root:
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator-sdk'
 ```
 
 ### Entity state

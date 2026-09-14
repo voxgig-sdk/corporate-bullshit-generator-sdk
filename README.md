@@ -105,7 +105,7 @@ local result, err = client:GenerateCorporateBullshit():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/corporate-bullshit-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
 | Python | `voxgig-sdk-corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
 | PHP | `voxgig-sdk/corporate-bullshit-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/corporate-bullshit-generator-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go` | `go get github.com/voxgig-sdk/corporate-bullshit-generator-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GenerateCorporateBullshit():load()
 ### TypeScript
 
 ```ts
-import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator'
+import { CorporateBullshitGeneratorSDK } from '@voxgig-sdk/corporate-bullshit-generator-sdk'
 
 const client = new CorporateBullshitGeneratorSDK()
 
