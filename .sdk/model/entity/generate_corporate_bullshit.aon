@@ -19,6 +19,12 @@ main: kit: entity: generate_corporate_bullshit: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /"
+            json: "{\"operationId\":\"generateCorporateBullshit\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"example1\":{\"summary\":\"Example corporate phrase 1\",\"value\":{\"phrase\":\"Quickly cloudify equity invested collaboration and idea-sharing\"}},\"example2\":{\"summary\":\"Example corporate phrase 2\",\"value\":{\"phrase\":\"Efficiently build empowered networks\"}}},\"schema\":{\"properties\":{\"phrase\":{\"description\":\"The generated corporate bullshit phrase\",\"example\":\"Quickly cloudify equity invested collaboration and idea-sharing\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successfully generated a corporate bullshit phrase\",\"headers\":{\"Access-Control-Allow-Origin\":{\"description\":\"CORS header allowing cross-origin requests\",\"schema\":{\"type\":\"string\"}}}},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/"
           transform: {
